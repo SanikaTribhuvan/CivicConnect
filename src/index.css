@@ -1,27 +1,47 @@
-/* src/index.css */
+/* src/index.css – CivicConnect design system */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global utilities */
-@layer utilities {
-  .bg-glass-green {
-    @apply rounded-card bg-[linear-gradient(180deg,rgba(120,160,125,0.45),rgba(63,105,74,0.58))] backdrop-blur-xl saturate-[140%] border border-white/25;
-    box-shadow: var(--tw-shadow-glass);
+/* ── Custom base ────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  .bg-glass-light {
-    @apply rounded-card bg-white/32 backdrop-blur-xl saturate-[140%] border border-white/25;
-    box-shadow: var(--tw-shadow-glass);
-  }
-  .rounded-card {
-    border-radius: var(--tw-border-radius-card);
-  }
-  .rounded-card-sm {
-    border-radius: var(--tw-border-radius-card-sm);
-  }
-  .rounded-pill {
-    border-radius: var(--tw-border-radius-pill);
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #0B1F14;
+    background: #F5EEEA;
   }
 }
 
-/* Font imports – the fonts will be loaded via @fontsource in the entry file */
+/* ── Reusable glass cards ───────────────────────────── */
+@layer components {
+  .glass-green {
+    border-radius: 28px;
+    background: linear-gradient(
+      180deg,
+      rgba(120, 160, 125, 0.45),
+      rgba(63, 105, 74, 0.58)
+    );
+    -webkit-backdrop-filter: blur(22px) saturate(1.4);
+    backdrop-filter: blur(22px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  }
+
+  .glass-light {
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.32);
+    -webkit-backdrop-filter: blur(22px) saturate(1.4);
+    backdrop-filter: blur(22px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  }
+
+  .pill {
+    border-radius: 999px;
+  }
+}
