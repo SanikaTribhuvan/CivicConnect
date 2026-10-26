@@ -1,0 +1,27 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global utilities */
+@layer utilities {
+  .bg-glass-green {
+    @apply rounded-card bg-[linear-gradient(180deg,rgba(120,160,125,0.45),rgba(63,105,74,0.58))] backdrop-blur-xl saturate-[140%] border border-white/25;
+    box-shadow: var(--tw-shadow-glass);
+  }
+  .bg-glass-light {
+    @apply rounded-card bg-white/32 backdrop-blur-xl saturate-[140%] border border-white/25;
+    box-shadow: var(--tw-shadow-glass);
+  }
+  .rounded-card {
+    border-radius: var(--tw-border-radius-card);
+  }
+  .rounded-card-sm {
+    border-radius: var(--tw-border-radius-card-sm);
+  }
+  .rounded-pill {
+    border-radius: var(--tw-border-radius-pill);
+  }
+}
+
+/* Font imports – the fonts will be loaded via @fontsource in the entry file */
